@@ -19,22 +19,21 @@ class ImageList(ListView):
     template_name = 'images.html'
 
 
-class AddImageForm(forms.Form):    
-    file=forms.ImageField()    
+class AddImageForm(forms.Form):
+    file=forms.ImageField()
     title=forms.CharField(max_length=200)
     desc=forms.CharField(max_length=200)
 
+
 @csrf_exempt
 def AddImage(request):
-	if request.method == 'POST':
-		form = AddImageForm(request.POST, request.FILES)
-		if form.is_valid():
-			i=Image(title=form.cleaned_data['title'], desc=form.cleaned_data['desc'], file=form.cleaned_data['file'])
-			i.save()
-			return HttpResponseRedirect('/')
-	else:
-		form=AddImageForm()
-	
-	return render_to_response('form.html', {
-        'form': form,
-    })
+    if request.method == 'POST':
+        form = AddImageForm(request.POST, request.FILES)
+        if form.is_valid():
+            i=Image(title=form.cleaned_data['title'], desc=form.cleaned_data['desc'], file=form.cleaned_data['file'])
+            i.save()
+            return HttpResponseRedirect('/')
+    else:
+        form=AddImageForm()
+
+    return render_to_response('form.html', {'form': form, })
