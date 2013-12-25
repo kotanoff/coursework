@@ -6,7 +6,8 @@ from gallery.views import ImageList
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', ImageList.as_view()),
     url(r'^form/$', 'gallery.views.AddImage'),
