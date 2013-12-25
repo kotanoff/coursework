@@ -1,0 +1,46 @@
+ul {
+	margin:0 auto;
+	background-color: #696969;
+}
+
+ul li {
+	float:left;
+	width:320px;
+	text-align:center;
+	list-style:none;
+	margin-left: 10px;
+}
+
+ul li img {
+	width: 300px;
+	vertical-align: middle;
+}
+
+.link {
+	text-align:center;
+	font-size:20px;
+	margin:20px auto;
+	padding: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+
+	background-color: #f9f9f9;
+	color: #909090;
+}
+
+form {
+	width:400px;
+	margin:0 auto;
+}
+
+form p label {
+	width:100px;
+	float:left;
+	line-height:26px;
+	text-align:right;
+	padding:0 20px;
+}
+
+input[type="submit"] {
+	margin:0 auto;
+	display:block;
+}
